@@ -1,0 +1,9 @@
+{
+  "name": "testUI",
+  "id": "1113561333181335609",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "ui": "ui.html",
+  "enablePrivatePluginApi": true
+}
