@@ -1,0 +1,17 @@
+<h2>Add link to documentation</h2>
+<input id="linkInput" value="" placeholder="https://example.com"><br/><br/><br/>
+<button id="add">Add Link</button>
+<button id="cancel">Cancel</button>
+<script>
+
+document.getElementById('add').onclick = () => {
+  const textbox = document.getElementById('linkInput');
+  const link = textbox.value;
+  parent.postMessage({ pluginMessage: { type: 'add-link', link } }, '*')
+}
+
+document.getElementById('cancel').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+}
+
+</script>

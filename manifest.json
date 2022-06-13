@@ -4,6 +4,17 @@
   "api": "1.0.0",
   "main": "code.js",
   "editorType": ["figma"],
-  "ui": "ui.html",
-  "enablePrivatePluginApi": true
+  "ui": {
+    "ui_addlink": "ui_addlink.html",
+    "ui_viewlink": "ui_viewlink.html"
+  },
+  "enablePrivatePluginApi": true,
+  "menu": [
+    {"name": "Add link to documentation", "command": "addLink"},
+    {"name": "Delete link", "command": "deleteLink"},
+    {"name": "View documentation", "command": "viewLink"}
+  ],
+  "relaunchButtons": [
+    {"command": "viewLink", "name": "View documentation", "multipleSelection": true}
+  ]
 }

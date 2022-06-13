@@ -8,11 +8,16 @@
 ></script>
 
 <script>
-  const LINK = "http://localhost:3000/";
+  onmessage = (event) => {
+    const link = event.data.pluginMessage;
+  console.log("got this from the plugin code", event.data.pluginMessage)
+  run(link);
+}
+  // const LINK = "http://localhost:3000/";
 
-  const fetchPage = async () => {
+  const fetchPage = async (link) => {
     try {
-      const response = await axios(LINK);
+      const response = await axios(link);
       console.log(response.data, "response");
       return response.data;
     } catch (e) {
@@ -20,10 +25,10 @@
     }
   };
 
-  const run = async () => {
-    const page = await fetchPage();
+  const run = async (link) => {
+    const page = await fetchPage(link);
     const div = document.querySelector("#main");
     div.innerHTML = page;
   };
-  run();
+  // run();
 </script>
